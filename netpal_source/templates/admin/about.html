@@ -1,0 +1,58 @@
+{% extends "admin/base.html" %}
+{% block admin_content %}
+<div class="admin-header"><h1>👥 فريق العمل</h1></div>
+
+<!-- Add member -->
+<div class="card">
+    <h3>إضافة عضو جديد</h3>
+    <form method="POST" action="{{ url_for('admin_team_add') }}" enctype="multipart/form-data">
+        <div class="form-row">
+            <div class="form-group"><label>الاسم (عربي)</label><input type="text" name="name_ar" required></div>
+            <div class="form-group"><label>الاسم (إنجليزي)</label><input type="text" name="name_en" required></div>
+        </div>
+        <div class="form-row">
+            <div class="form-group"><label>الدور (عربي)</label><input type="text" name="role_ar" required></div>
+            <div class="form-group"><label>الدور (إنجليزي)</label><input type="text" name="role_en" required></div>
+        </div>
+        <div class="form-row">
+            <div class="form-group"><label>المهارات (عربي - فاصل)</label><input type="text" name="skills_ar"></div>
+            <div class="form-group"><label>المهارات (إنجليزي - فاصل)</label><input type="text" name="skills_en"></div>
+        </div>
+        <div class="form-group"><label>الصورة</label><input type="file" name="image" accept="image/*" style="padding:8px"></div>
+        <button type="submit" class="btn btn-primary" style="margin-top:8px">➕ إضافة</button>
+    </form>
+</div>
+
+<!-- Members list -->
+{% for m in members %}
+<div class="card">
+    <form method="POST" action="{{ url_for('admin_team_edit', tid=m.id) }}" enctype="multipart/form-data">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:12px">
+            {% if m.image %}
+            <img src="/static/uploads/{{ m.image }}" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--primary)">
+            {% else %}
+            <div style="width:60px;height:60px;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:1.5rem">👤</div>
+            {% endif %}
+            <div><strong>{{ m.name_ar }}</strong> / {{ m.name_en }}<br><span style="color:var(--text2);font-size:.85rem">{{ m.role_ar }}</span></div>
+        </div>
+        <div class="form-row">
+            <div class="form-group"><label>الاسم (عربي)</label><input type="text" name="name_ar" value="{{ m.name_ar }}" required></div>
+            <div class="form-group"><label>الاسم (إنجليزي)</label><input type="text" name="name_en" value="{{ m.name_en }}" required></div>
+        </div>
+        <div class="form-row">
+            <div class="form-group"><label>الدور (عربي)</label><input type="text" name="role_ar" value="{{ m.role_ar }}" required></div>
+            <div class="form-group"><label>الدور (إنجليزي)</label><input type="text" name="role_en" value="{{ m.role_en }}" required></div>
+        </div>
+        <div class="form-row">
+            <div class="form-group"><label>المهارات (عربي)</label><input type="text" name="skills_ar" value="{{ m.skills_ar }}"></div>
+            <div class="form-group"><label>المهارات (إنجليزي)</label><input type="text" name="skills_en" value="{{ m.skills_en }}"></div>
+        </div>
+        <div class="form-group"><label>تغيير الصورة</label><input type="file" name="image" accept="image/*" style="padding:8px"></div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+            <button type="submit" class="btn btn-primary btn-sm">💾 حفظ</button>
+            <a href="{{ url_for('admin_team_delete', tid=m.id) }}" class="btn btn-danger btn-sm" onclick="return confirm('حذف العضو؟')">🗑 حذف</a>
+        </div>
+    </form>
+</div>
+{% endfor %}
+{% endblock %}

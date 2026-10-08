@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetPal Portfolio</title>
+    <meta name="description" content="NetPal — نبتكر حضوراً بصرياً يخطف الأنظار">
+    <meta name="theme-color" content="#07444E">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="theme-dark">
+    <div id="custom-cursor"></div>
+    <div id="cursor-trail"></div>
+
+    <div id="preloader">
+        <svg id="logo-svg-draw" viewBox="0 0 200 60" width="200" xmlns="http://www.w3.org/2000/svg">
+            <text x="100" y="45" text-anchor="middle" font-family="Co Headline,sans-serif" font-size="40"
+                  font-weight="700" fill="none" stroke="var(--primary)" stroke-width="1.5"
+                  class="stroke-draw">NetPal</text>
+        </svg>
+    </div>
+
+    <nav class="floating-nav">
+        <a href="/" class="nav-logo">
+            <img src="{{ url_for('static', filename='images/لوغو نيتبال جديد-0١.svg') }}" alt="NetPal" class="nav-logo-img">
+        </a>
+        <div class="nav-links">
+            <a href="/#about" data-i18n="nav_about">من نحن</a>
+            <a href="/#portfolio" data-i18n="nav_portfolio">أعمالنا</a>
+            <a href="/#contact" data-i18n="nav_contact">تواصل معنا</a>
+        </div>
+        <div class="nav-controls">
+            <button id="lang-toggle" aria-label="Toggle Language" class="nav-btn">EN</button>
+            <button id="theme-toggle" aria-label="Toggle Theme" class="nav-btn">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                <svg class="icon-sun hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <script>
+        window.SITE_CONTENT = {{ content | tojson | safe }};
+        {% if projects is defined %}window.PROJECTS_DATA = {{ projects | tojson | safe }};{% else %}window.PROJECTS_DATA = [];{% endif %}
+        {% if team is defined %}window.TEAM_DATA = {{ team | tojson | safe }};{% else %}window.TEAM_DATA = [];{% endif %}
+        {% if sections is defined %}window.SECTIONS_DATA = {{ sections | tojson | safe }};{% else %}window.SECTIONS_DATA = [];{% endif %}
+    </script>
+
+    <div id="smooth-wrapper"><div id="smooth-content">
+        {% block content %}{% endblock %}
+        <footer class="site-footer">
+            <div class="footer-content container">
+                <img src="{{ url_for('static', filename='images/لوغو نيتبال جديد-0١.svg') }}" alt="NetPal" class="footer-logo">
+                <p class="footer-madeby" data-i18n="footer_copy">جميع الحقوق محفوظة NetPal 2026</p>
+            </div>
+        </footer>
+    </div></div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetPal Portfolio</title>
+    <meta name="description" content="NetPal — نبتكر حضوراً بصرياً يخطف الأنظار">
+    <meta name="theme-color" content="#07444E">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="theme-dark">
+    <div id="custom-cursor"></div>
+    <div id="cursor-trail"></div>
+
+    <div id="preloader">
+        <svg id="logo-svg-draw" viewBox="0 0 200 60" width="200" xmlns="http://www.w3.org/2000/svg">
+            <text x="100" y="45" text-anchor="middle" font-family="Co Headline,sans-serif" font-size="40"
+                  font-weight="700" fill="none" stroke="var(--primary)" stroke-width="1.5"
+                  class="stroke-draw">NetPal</text>
+        </svg>
+    </div>
+
+    <nav class="floating-nav">
+        <a href="/" class="nav-logo">
+            <img src="{{ url_for('static', filename='images/لوغو نيتبال جديد-0١.svg') }}" alt="NetPal" class="nav-logo-img">
+        </a>
+        <div class="nav-links">
+            <a href="/#about" data-i18n="nav_about">من نحن</a>
+            <a href="/#portfolio" data-i18n="nav_portfolio">أعمالنا</a>
+            <a href="/#contact" data-i18n="nav_contact">تواصل معنا</a>
+        </div>
+        <div class="nav-controls">
+            <button id="lang-toggle" aria-label="Toggle Language" class="nav-btn">EN</button>
+            <button id="theme-toggle" aria-label="Toggle Theme" class="nav-btn">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                <svg class="icon-sun hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <script>
+        window.SITE_CONTENT = {{ content | tojson | safe }};
+        {% if projects is defined %}window.PROJECTS_DATA = {{ projects | tojson | safe }};{% else %}window.PROJECTS_DATA = [];{% endif %}
+        {% if team is defined %}window.TEAM_DATA = {{ team | tojson | safe }};{% else %}window.TEAM_DATA = [];{% endif %}
+        {% if sections is defined %}window.SECTIONS_DATA = {{ sections | tojson | safe }};{% else %}window.SECTIONS_DATA = [];{% endif %}
+    </script>
+
+    <div id="smooth-wrapper"><div id="smooth-content">
+        {% block content %}{% endblock %}
+        <footer class="site-footer">
+            <div class="footer-content container">
+                <img src="{{ url_for('static', filename='images/لوغو نيتبال جديد-0١.svg') }}" alt="NetPal" class="footer-logo">
+                <p class="footer-madeby" data-i18n="footer_copy">جميع الحقوق محفوظة NetPal 2026</p>
+            </div>
+        </footer>
+    </div></div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetPal Portfolio</title>
+    <meta name="description" content="NetPal — نبتكر حضوراً بصرياً يخطف الأنظار">
+    <meta name="theme-color" content="#07444E">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="theme-dark">
+    <div id="custom-cursor"></div>
+    <div id="cursor-trail"></div>
+
+    <div id="preloader">
+        <svg id="logo-svg-draw" viewBox="0 0 200 60" width="200" xmlns="http://www.w3.org/2000/svg">
+            <text x="100" y="45" text-anchor="middle" font-family="Co Headline,sans-serif" font-size="40"
+                  font-weight="700" fill="none" stroke="var(--primary)" stroke-width="1.5"
+                  class="stroke-draw">NetPal</text>
+        </svg>
+    </div>
+
+    <nav class="floating-nav">
+        <a href="/" class="nav-logo">
+            <img src="{{ url_for('static', filename='images/لوغو نيتبال جديد-0١.svg') }}" alt="NetPal" class="nav-logo-img">
+        </a>
+        <div class="nav-links">
+            <a href="/#about" data-i18n="nav_about">من نحن</a>
+            <a href="/#portfolio" data-i18n="nav_portfolio">أعمالنا</a>
+            <a href="/#contact" data-i18n="nav_contact">تواصل معنا</a>
+        </div>
+        <div class="nav-controls">
+            <button id="lang-toggle" aria-label="Toggle Language" class="nav-btn">EN</button>
+            <button id="theme-toggle" aria-label="Toggle Theme" class="nav-btn">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                <svg class="icon-sun hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="smooth-wrapper"><div id="smooth-content">
+        {% block content %}{% endblock %}
+        <footer class="site-footer">
+            <div class="footer-content container">
+                <img src="{{ url_for('static', filename='images/لوغو نيتبال جديد-0١.svg') }}" alt="NetPal" class="footer-logo">
+                <p class="footer-madeby">جميع الحقوق محفوظة NetPal 2026</p>
+            </div>
+        </footer>
+    </div></div>
+
+    <script>
+        window.SITE_CONTENT = {{ content | tojson | safe }};
+        {% if projects is defined %}window.PROJECTS_DATA = {{ projects | tojson | safe }};{% else %}window.PROJECTS_DATA = [];{% endif %}
+        {% if team is defined %}window.TEAM_DATA = {{ team | tojson | safe }};{% else %}window.TEAM_DATA = [];{% endif %}
+        {% if sections is defined %}window.SECTIONS_DATA = {{ sections | tojson | safe }};{% else %}window.SECTIONS_DATA = [];{% endif %}
+    </script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

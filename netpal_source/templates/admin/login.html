@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetPal Admin – تسجيل الدخول</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',Tahoma,sans-serif;background:#0e1117;color:#e6edf3;display:flex;align-items:center;justify-content:center;min-height:100vh}
+        .login-card{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:48px 40px;width:100%;max-width:400px;text-align:center}
+        .login-card h1{font-size:1.5rem;margin-bottom:8px;color:#2FEAAB}
+        .login-card p{color:#8b949e;margin-bottom:28px;font-size:.9rem}
+        .form-group{margin-bottom:16px;text-align:start}
+        .form-group label{display:block;margin-bottom:6px;font-size:.85rem;color:#8b949e}
+        .form-group input{width:100%;padding:12px 16px;background:#0e1117;border:1px solid #30363d;border-radius:10px;color:#e6edf3;font-size:1rem;font-family:inherit}
+        .form-group input:focus{outline:none;border-color:#2FEAAB}
+        .btn-login{width:100%;padding:14px;background:#2FEAAB;color:#07444E;border:none;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;font-family:inherit;margin-top:8px;transition:opacity .2s}
+        .btn-login:hover{opacity:.9}
+        .alert{padding:10px;border-radius:8px;margin-bottom:16px;font-size:.85rem;background:rgba(248,81,73,.1);color:#f85149;border:1px solid rgba(248,81,73,.2)}
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h1>🔐 NetPal Admin</h1>
+        <p>تسجيل الدخول إلى لوحة التحكم</p>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}{% for cat, msg in messages %}<div class="alert">{{ msg }}</div>{% endfor %}{% endif %}
+        {% endwith %}
+        {% if error %}<div class="alert">{{ error }}</div>{% endif %}
+        <form method="POST" action="{{ url_for('admin_login') }}">
+            <div class="form-group"><label>اسم المستخدم</label><input type="text" name="username" required autofocus></div>
+            <div class="form-group"><label>كلمة المرور</label><input type="password" name="password" required></div>
+            <button type="submit" class="btn-login">دخول</button>
+        </form>
+    </div>
+</body>
+</html>

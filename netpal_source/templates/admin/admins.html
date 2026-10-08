@@ -1,0 +1,59 @@
+{% extends "admin/base.html" %}
+{% block admin_content %}
+<div class="admin-header"><h1>🔐 إدارة المشرفين</h1></div>
+
+<!-- Add admin -->
+<div class="card">
+    <h3>إضافة مشرف جديد</h3>
+    <form method="POST" action="{{ url_for('admin_admins_add') }}">
+        <div class="form-row">
+            <div class="form-group"><label>اسم المستخدم</label><input type="text" name="username" required></div>
+            <div class="form-group"><label>كلمة المرور</label><input type="password" name="password" required></div>
+            <div class="form-group">
+                <label>الدور</label>
+                <select name="role"><option value="admin">مشرف</option><option value="super_admin">مشرف أعلى</option></select>
+            </div>
+        </div>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="can_manage_projects" checked> المشاريع</label>
+            <label><input type="checkbox" name="can_manage_sections" checked> الأقسام</label>
+            <label><input type="checkbox" name="can_manage_content" checked> المحتوى</label>
+            <label><input type="checkbox" name="can_manage_team" checked> الفريق</label>
+            <label><input type="checkbox" name="can_manage_logo"> اللوغو</label>
+            <label><input type="checkbox" name="can_manage_admins"> المشرفين</label>
+        </div>
+        <button type="submit" class="btn btn-primary">➕ إضافة</button>
+    </form>
+</div>
+
+<!-- Admins list -->
+{% for a in admins %}
+<div class="card">
+    <form method="POST" action="{{ url_for('admin_admins_update', aid=a.id) }}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <div>
+                <strong>{{ a.username }}</strong>
+                <span class="tag">{{ a.role }}</span>
+            </div>
+            {% if a.id != current_user.id %}
+            <a href="{{ url_for('admin_admins_delete', aid=a.id) }}" class="btn btn-danger btn-sm" onclick="return confirm('حذف المشرف؟')">🗑 حذف</a>
+            {% endif %}
+        </div>
+        {% if a.role != 'super_admin' or a.id != current_user.id %}
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="can_manage_projects" {% if a.can_manage_projects %}checked{% endif %}> المشاريع</label>
+            <label><input type="checkbox" name="can_manage_sections" {% if a.can_manage_sections %}checked{% endif %}> الأقسام</label>
+            <label><input type="checkbox" name="can_manage_content" {% if a.can_manage_content %}checked{% endif %}> المحتوى</label>
+            <label><input type="checkbox" name="can_manage_team" {% if a.can_manage_team %}checked{% endif %}> الفريق</label>
+            <label><input type="checkbox" name="can_manage_logo" {% if a.can_manage_logo %}checked{% endif %}> اللوغو</label>
+            <label><input type="checkbox" name="can_manage_admins" {% if a.can_manage_admins %}checked{% endif %}> المشرفين</label>
+        </div>
+        <div class="form-row">
+            <div class="form-group"><label>كلمة مرور جديدة (اتركها فارغة إن لم ترد التغيير)</label><input type="password" name="new_password"></div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">💾 حفظ الصلاحيات</button>
+        {% endif %}
+    </form>
+</div>
+{% endfor %}
+{% endblock %}

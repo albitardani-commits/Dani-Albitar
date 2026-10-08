@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="project-detail-page">
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/#portfolio" data-i18n="nav_portfolio">أعمالنا</a>
+            <span class="sep">/</span>
+            <span data-ar="{{ section.name_ar }}" data-en="{{ section.name_en }}">{{ section.name_ar }}</span>
+            {% if subsection %}
+            <span class="sep">/</span>
+            <span data-ar="{{ subsection.name_ar }}" data-en="{{ subsection.name_en }}">{{ subsection.name_ar }}</span>
+            {% endif %}
+        </nav>
+        <div class="pd-header">
+            <h1 class="pd-title" data-ar="{{ project.title_ar }}" data-en="{{ project.title_en }}">{{ project.title_ar }}</h1>
+            {% if project.tech_tags %}<div class="pd-tags">{% for t in project.tech_tags.split(',') %}<span class="skill-tag">{{ t.strip() }}</span>{% endfor %}</div>{% endif %}
+        </div>
+        <div class="pd-body">
+            <p class="pd-desc" data-ar="{{ project.description_ar }}" data-en="{{ project.description_en }}">{{ project.description_ar }}</p>
+            {% if project.link_url %}<a href="{{ project.link_url }}" target="_blank" rel="noopener" class="btn btn-primary pd-link" data-i18n="site_visit">زيارة الموقع</a>{% endif %}
+        </div>
+        <div class="pd-cover"><img src="{{ project.cover_image }}" alt="{{ project.title_en }}" onerror="this.src='/static/uploads/{{ project.cover_image }}'"></div>
+        {% if project.video_url %}
+        <div class="pd-video">
+            <video controls style="width:100%;border-radius:16px;margin-bottom:30px">
+                <source src="/static/uploads/{{ project.video_url }}" type="video/mp4">
+            </video>
+        </div>
+        {% endif %}
+        {% if images %}
+        <div class="pd-gallery">
+            {% for img in images %}
+            <div class="pd-gallery-item">
+                <img src="/static/uploads/{{ img }}" alt="Gallery" loading="lazy">
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="pd-back"><a href="/#portfolio" class="btn btn-outline" data-i18n="back_portfolio">العودة للأعمال</a></div>
+    </div>
+</section>
+<script>
+if(window.SITE_CONTENT){Object.assign(window.SITE_CONTENT, {
+    nav_portfolio:{ar:'أعمالنا',en:'Portfolio'}, site_visit:{ar:'زيارة الموقع',en:'Visit Website'},
+    back_portfolio:{ar:'العودة للأعمال',en:'Back to Portfolio'},
+    footer_copy:{ar:'جميع الحقوق محفوظة NetPal 2026',en:'All Rights Reserved NetPal 2026'},
+});}
+</script>
+{% endblock %}

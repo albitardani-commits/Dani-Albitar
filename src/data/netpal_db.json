@@ -1,0 +1,776 @@
+{
+  "sections": [
+    {
+      "id": 1,
+      "name_ar": "تصميم",
+      "name_en": "Design",
+      "slug": "design",
+      "icon": "palette",
+      "order_idx": 0
+    },
+    {
+      "id": 2,
+      "name_ar": "إنتاج الفيديو والموشن",
+      "name_en": "Video & Motion Production",
+      "slug": "motion",
+      "icon": "film",
+      "order_idx": 1
+    },
+    {
+      "id": 3,
+      "name_ar": "برمجة",
+      "name_en": "Development",
+      "slug": "dev",
+      "icon": "code",
+      "order_idx": 2
+    },
+    {
+      "id": 4,
+      "name_ar": "تسويق",
+      "name_en": "Marketing",
+      "slug": "marketing",
+      "icon": "megaphone",
+      "order_idx": 3
+    }
+  ],
+  "subsections": [
+    {
+      "id": 1,
+      "section_id": 1,
+      "name_ar": "هوية بصرية",
+      "name_en": "Branding",
+      "slug": "branding",
+      "order_idx": 0
+    },
+    {
+      "id": 5,
+      "section_id": 2,
+      "name_ar": "موشن 2D",
+      "name_en": "2D Motion",
+      "slug": "2d",
+      "order_idx": 0
+    },
+    {
+      "id": 9,
+      "section_id": 3,
+      "name_ar": "مواقع",
+      "name_en": "Websites",
+      "slug": "websites",
+      "order_idx": 0
+    },
+    {
+      "id": 13,
+      "section_id": 4,
+      "name_ar": "إدارة حسابات",
+      "name_en": "Account Management",
+      "slug": "smm",
+      "order_idx": 0
+    },
+    {
+      "id": 2,
+      "section_id": 1,
+      "name_ar": "سوشال ميديا",
+      "name_en": "Social Media",
+      "slug": "social",
+      "order_idx": 1
+    },
+    {
+      "id": 6,
+      "section_id": 2,
+      "name_ar": "موشن 3D",
+      "name_en": "3D Motion",
+      "slug": "3d",
+      "order_idx": 1
+    },
+    {
+      "id": 10,
+      "section_id": 3,
+      "name_ar": "تطبيقات",
+      "name_en": "Apps",
+      "slug": "apps",
+      "order_idx": 1
+    },
+    {
+      "id": 14,
+      "section_id": 4,
+      "name_ar": "إعلانات ممولة",
+      "name_en": "Paid Ads",
+      "slug": "ads",
+      "order_idx": 1
+    },
+    {
+      "id": 3,
+      "section_id": 1,
+      "name_ar": "UI/UX",
+      "name_en": "UI/UX",
+      "slug": "uiux",
+      "order_idx": 2
+    },
+    {
+      "id": 7,
+      "section_id": 2,
+      "name_ar": "Reels ومقاطع قصيرة",
+      "name_en": "Reels & Short Videos",
+      "slug": "reels",
+      "order_idx": 2
+    },
+    {
+      "id": 11,
+      "section_id": 3,
+      "name_ar": "بوتات",
+      "name_en": "Bots",
+      "slug": "bots",
+      "order_idx": 2
+    },
+    {
+      "id": 15,
+      "section_id": 4,
+      "name_ar": "تسويق بالمحتوى",
+      "name_en": "Content Marketing",
+      "slug": "contentmkt",
+      "order_idx": 2
+    },
+    {
+      "id": 4,
+      "section_id": 1,
+      "name_ar": "مطبوعات",
+      "name_en": "Print",
+      "slug": "print",
+      "order_idx": 3
+    },
+    {
+      "id": 8,
+      "section_id": 2,
+      "name_ar": "إنتاج إعلاني",
+      "name_en": "Ad Production",
+      "slug": "adprod",
+      "order_idx": 3
+    },
+    {
+      "id": 12,
+      "section_id": 3,
+      "name_ar": "API و أتمتة",
+      "name_en": "API & Automation",
+      "slug": "api",
+      "order_idx": 3
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title_ar": "هوية مطعم الأصيل",
+      "title_en": "Al Aseel Restaurant Branding",
+      "description_ar": "تصميم هوية بصرية كاملة لمطعم الأصيل تشمل الشعار والألوان والمطبوعات",
+      "description_en": "Full visual identity for Al Aseel restaurant including logo, colors and prints",
+      "section_id": 1,
+      "subsection_id": 1,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Branding,Logo,Identity",
+      "order_idx": 0
+    },
+    {
+      "id": 2,
+      "title_ar": "هوية كافيه بيردز",
+      "title_en": "Birds Café Identity",
+      "description_ar": "شعار وهوية متكاملة لكافيه عصري",
+      "description_en": "Logo and complete identity for a modern café",
+      "section_id": 1,
+      "subsection_id": 1,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Branding,Café,Modern",
+      "order_idx": 1
+    },
+    {
+      "id": 3,
+      "title_ar": "هوية شركة ريتش",
+      "title_en": "Reach Company Branding",
+      "description_ar": "هوية مؤسسية لشركة استشارات",
+      "description_en": "Corporate identity for a consulting firm",
+      "section_id": 1,
+      "subsection_id": 1,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Corporate,Branding",
+      "order_idx": 2
+    },
+    {
+      "id": 4,
+      "title_ar": "تصاميم سوشال كلينك",
+      "title_en": "Clinic Social Media Pack",
+      "description_ar": "باكج تصاميم سوشال ميديا لعيادة طبية",
+      "description_en": "Social media design package for a medical clinic",
+      "section_id": 1,
+      "subsection_id": 2,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Social,Medical,Posts",
+      "order_idx": 3
+    },
+    {
+      "id": 5,
+      "title_ar": "حملة رمضان الخير",
+      "title_en": "Ramadan Charity Campaign",
+      "description_ar": "سلسلة تصاميم لحملة رمضانية خيرية",
+      "description_en": "Design series for a Ramadan charity campaign",
+      "section_id": 1,
+      "subsection_id": 2,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Social,Ramadan,Charity",
+      "order_idx": 4
+    },
+    {
+      "id": 6,
+      "title_ar": "واجهة تطبيق توصيل",
+      "title_en": "Delivery App UI",
+      "description_ar": "تصميم واجهة مستخدم لتطبيق توصيل طعام",
+      "description_en": "UI design for a food delivery app",
+      "section_id": 1,
+      "subsection_id": 3,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "UI/UX,App,Figma",
+      "order_idx": 5
+    },
+    {
+      "id": 7,
+      "title_ar": "واجهة متجر إلكتروني",
+      "title_en": "E-Commerce UI",
+      "description_ar": "تصميم واجهة متجر أونلاين عصري",
+      "description_en": "Modern e-commerce store UI design",
+      "section_id": 1,
+      "subsection_id": 3,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "UI/UX,E-Commerce,Web",
+      "order_idx": 6
+    },
+    {
+      "id": 8,
+      "title_ar": "بروشور سياحي",
+      "title_en": "Tourism Brochure",
+      "description_ar": "بروشور ثلاثي الطي لشركة سياحة",
+      "description_en": "Tri-fold brochure for a tourism company",
+      "section_id": 1,
+      "subsection_id": 4,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Print,Brochure",
+      "order_idx": 7
+    },
+    {
+      "id": 9,
+      "title_ar": "إعلان موشن لتطبيق",
+      "title_en": "App Promo Motion",
+      "description_ar": "فيديو موشن جرافيك ترويجي لتطبيق جوال",
+      "description_en": "Promotional motion graphic video for a mobile app",
+      "section_id": 2,
+      "subsection_id": 5,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Motion,2D,App",
+      "order_idx": 8
+    },
+    {
+      "id": 10,
+      "title_ar": "فيديو تعريفي شركة",
+      "title_en": "Company Intro Video",
+      "description_ar": "فيديو تعريفي بأسلوب موشن جرافيك",
+      "description_en": "Company introduction motion graphic video",
+      "section_id": 2,
+      "subsection_id": 5,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Motion,2D,Intro",
+      "order_idx": 9
+    },
+    {
+      "id": 11,
+      "title_ar": "انفوجرافيك متحرك",
+      "title_en": "Animated Infographic",
+      "description_ar": "انفوجرافيك متحرك لإحصائيات سنوية",
+      "description_en": "Animated infographic for annual statistics",
+      "section_id": 2,
+      "subsection_id": 5,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Motion,Infographic",
+      "order_idx": 10
+    },
+    {
+      "id": 12,
+      "title_ar": "لوغو 3D متحرك",
+      "title_en": "3D Logo Animation",
+      "description_ar": "تحريك شعار ثلاثي الأبعاد مع تأثيرات ضوئية",
+      "description_en": "3D logo animation with lighting effects",
+      "section_id": 2,
+      "subsection_id": 6,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "3D,Logo,Animation",
+      "order_idx": 11
+    },
+    {
+      "id": 13,
+      "title_ar": "مشهد منتج 3D",
+      "title_en": "3D Product Scene",
+      "description_ar": "عرض ثلاثي الأبعاد لمنتج تجاري",
+      "description_en": "3D product showcase for a commercial product",
+      "section_id": 2,
+      "subsection_id": 6,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "3D,Product",
+      "order_idx": 12
+    },
+    {
+      "id": 14,
+      "title_ar": "ريلز مطعم",
+      "title_en": "Restaurant Reel",
+      "description_ar": "فيديو ريلز قصير لعرض أطباق مطعم",
+      "description_en": "Short reel video showcasing restaurant dishes",
+      "section_id": 2,
+      "subsection_id": 7,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Reels,Food,Short",
+      "order_idx": 13
+    },
+    {
+      "id": 15,
+      "title_ar": "ريلز أزياء",
+      "title_en": "Fashion Reel",
+      "description_ar": "ريلز ترويجي لماركة ملابس",
+      "description_en": "Promotional reel for a clothing brand",
+      "section_id": 2,
+      "subsection_id": 7,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Reels,Fashion",
+      "order_idx": 14
+    },
+    {
+      "id": 16,
+      "title_ar": "إعلان تلفزيوني",
+      "title_en": "TV Commercial",
+      "description_ar": "إنتاج إعلان تلفزيوني 30 ثانية",
+      "description_en": "30-second TV commercial production",
+      "section_id": 2,
+      "subsection_id": 8,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Ad,TV,Production",
+      "order_idx": 15
+    },
+    {
+      "id": 17,
+      "title_ar": "موقع شركة محاماة",
+      "title_en": "Law Firm Website",
+      "description_ar": "موقع احترافي لمكتب محاماة مع نظام حجز مواعيد",
+      "description_en": "Professional law firm website with appointment booking",
+      "section_id": 3,
+      "subsection_id": 9,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Web,Flask,Booking",
+      "order_idx": 16
+    },
+    {
+      "id": 18,
+      "title_ar": "متجر إلكتروني",
+      "title_en": "E-Commerce Store",
+      "description_ar": "متجر إلكتروني متكامل مع بوابة دفع",
+      "description_en": "Full e-commerce store with payment gateway",
+      "section_id": 3,
+      "subsection_id": 9,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Web,E-Commerce,Payment",
+      "order_idx": 17
+    },
+    {
+      "id": 19,
+      "title_ar": "منصة تعليمية",
+      "title_en": "Learning Platform",
+      "description_ar": "منصة كورسات أونلاين مع نظام اشتراكات",
+      "description_en": "Online courses platform with subscription system",
+      "section_id": 3,
+      "subsection_id": 9,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Web,Education,SaaS",
+      "order_idx": 18
+    },
+    {
+      "id": 20,
+      "title_ar": "تطبيق مهام",
+      "title_en": "Tasks App",
+      "description_ar": "تطبيق إدارة مهام مع تنبيهات وتقويم",
+      "description_en": "Task management app with notifications and calendar",
+      "section_id": 3,
+      "subsection_id": 10,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "App,Flutter,Tasks",
+      "order_idx": 19
+    },
+    {
+      "id": 21,
+      "title_ar": "تطبيق حجوزات",
+      "title_en": "Booking App",
+      "description_ar": "تطبيق حجز مواعيد لصالونات التجميل",
+      "description_en": "Appointment booking app for beauty salons",
+      "section_id": 3,
+      "subsection_id": 10,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "App,Booking,Mobile",
+      "order_idx": 20
+    },
+    {
+      "id": 22,
+      "title_ar": "بوت خدمة عملاء",
+      "title_en": "Customer Service Bot",
+      "description_ar": "بوت تلغرام ذكي لخدمة العملاء",
+      "description_en": "Smart Telegram bot for customer service",
+      "section_id": 3,
+      "subsection_id": 11,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Bot,Telegram,AI",
+      "order_idx": 21
+    },
+    {
+      "id": 23,
+      "title_ar": "بوت طلبات واتساب",
+      "title_en": "WhatsApp Orders Bot",
+      "description_ar": "بوت واتساب لاستقبال ومتابعة الطلبات",
+      "description_en": "WhatsApp bot for orders management",
+      "section_id": 3,
+      "subsection_id": 11,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Bot,WhatsApp,Orders",
+      "order_idx": 22
+    },
+    {
+      "id": 24,
+      "title_ar": "نظام API متجر",
+      "title_en": "Store API System",
+      "description_ar": "API كامل لمتجر مع توثيق Swagger",
+      "description_en": "Complete store API with Swagger documentation",
+      "section_id": 3,
+      "subsection_id": 12,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "API,REST,Swagger",
+      "order_idx": 23
+    },
+    {
+      "id": 25,
+      "title_ar": "إدارة حساب مطعم",
+      "title_en": "Restaurant Account Mgmt",
+      "description_ar": "إدارة حسابات سوشال ميديا لمطعم لمدة 3 أشهر",
+      "description_en": "3-month social media management for a restaurant",
+      "section_id": 4,
+      "subsection_id": 13,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "SMM,Restaurant,Growth",
+      "order_idx": 24
+    },
+    {
+      "id": 26,
+      "title_ar": "إدارة حساب عيادة",
+      "title_en": "Clinic Social Management",
+      "description_ar": "إدارة محتوى وتصاميم لحسابات عيادة تجميل",
+      "description_en": "Content and design management for a beauty clinic",
+      "section_id": 4,
+      "subsection_id": 13,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "SMM,Clinic,Content",
+      "order_idx": 25
+    },
+    {
+      "id": 27,
+      "title_ar": "حملة إعلانية متجر",
+      "title_en": "Store Ad Campaign",
+      "description_ar": "حملة إعلانات جوجل وفيسبوك لمتجر أونلاين",
+      "description_en": "Google & Facebook ad campaign for an online store",
+      "section_id": 4,
+      "subsection_id": 14,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Ads,Google,Facebook",
+      "order_idx": 26
+    },
+    {
+      "id": 28,
+      "title_ar": "حملة تطبيق",
+      "title_en": "App Install Campaign",
+      "description_ar": "حملة تثبيت تطبيق مع 10 آلاف تنزيل",
+      "description_en": "App install campaign with 10K downloads",
+      "section_id": 4,
+      "subsection_id": 14,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Ads,AppInstall,Mobile",
+      "order_idx": 27
+    },
+    {
+      "id": 29,
+      "title_ar": "خطة محتوى ربع سنوية",
+      "title_en": "Quarterly Content Plan",
+      "description_ar": "خطة محتوى 3 أشهر لشركة تقنية",
+      "description_en": "3-month content plan for a tech company",
+      "section_id": 4,
+      "subsection_id": 15,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "Content,Strategy,Planning",
+      "order_idx": 28
+    },
+    {
+      "id": 30,
+      "title_ar": "سلسلة مقالات SEO",
+      "title_en": "SEO Article Series",
+      "description_ar": "كتابة 20 مقال متوافق مع SEO",
+      "description_en": "Writing 20 SEO-optimized articles",
+      "section_id": 4,
+      "subsection_id": 15,
+      "cover_image": "https://placehold.co/800x450/07444E/FFFFFF?text=NetPal+Project",
+      "video_url": null,
+      "link_url": null,
+      "tech_tags": "SEO,Blog,Content",
+      "order_idx": 29
+    }
+  ],
+  "team": [
+    {
+      "id": 1,
+      "name_ar": "دانيال",
+      "name_en": "Daniel",
+      "role_ar": "مصمم",
+      "role_en": "Designer",
+      "skills_ar": "فوتوشوب,اليستريتور,فيجما",
+      "skills_en": "Photoshop,Illustrator,Figma",
+      "image": ""
+    },
+    {
+      "id": 2,
+      "name_ar": "أحمد",
+      "name_en": "Ahmad",
+      "role_ar": "مبرمج",
+      "role_en": "Developer",
+      "skills_ar": "Python,JavaScript,Flask",
+      "skills_en": "Python,JavaScript,Flask",
+      "image": ""
+    },
+    {
+      "id": 3,
+      "name_ar": "ليث",
+      "name_en": "Laith",
+      "role_ar": "مونتير وموشن",
+      "role_en": "Editor & Motion",
+      "skills_ar": "افتر افكتس,بريمير,DaVinci",
+      "skills_en": "After Effects,Premiere,DaVinci",
+      "image": ""
+    },
+    {
+      "id": 4,
+      "name_ar": "عمر",
+      "name_en": "Omar",
+      "role_ar": "مسوّق رقمي",
+      "role_en": "Digital Marketer",
+      "skills_ar": "إعلانات,SEO,محتوى",
+      "skills_en": "Ads,SEO,Content",
+      "image": ""
+    }
+  ],
+  "content": [
+    {
+      "id": 1,
+      "key_name": "hero_title",
+      "text_ar": "نحن فريق NetPal — نبتكر حضوراً بصرياً يخطف الأنظار ويترك أثراً لا يُنسى",
+      "text_en": "We are NetPal — We create visual presence that captures attention and leaves an unforgettable mark"
+    },
+    {
+      "id": 2,
+      "key_name": "hero_subtitle",
+      "text_ar": "تصميم | فيديو وموشن | برمجة | تسويق",
+      "text_en": "Design | Video & Motion | Development | Marketing"
+    },
+    {
+      "id": 3,
+      "key_name": "about_title",
+      "text_ar": "فريق واحد. أربع مهارات. إبداع بلا حدود.",
+      "text_en": "One Team. Four Skills. Limitless Creativity."
+    },
+    {
+      "id": 4,
+      "key_name": "about_text",
+      "text_ar": "نحن في NetPal نؤمن بأن التصميم ليس مجرد شكل.",
+      "text_en": "At NetPal, we believe design is more than just looks."
+    },
+    {
+      "id": 5,
+      "key_name": "feat_1",
+      "text_ar": "تصميم مبني على هدف",
+      "text_en": "Purpose-Driven Design"
+    },
+    {
+      "id": 6,
+      "key_name": "feat_2",
+      "text_ar": "نظام شغل واضح",
+      "text_en": "Clear Workflow"
+    },
+    {
+      "id": 7,
+      "key_name": "feat_3",
+      "text_ar": "تسليم ملفات جاهز فوراً",
+      "text_en": "Instant File Delivery"
+    },
+    {
+      "id": 8,
+      "key_name": "contact_title",
+      "text_ar": "جاهزين للمشروع الجاي",
+      "text_en": "Ready for the Next Project"
+    },
+    {
+      "id": 9,
+      "key_name": "contact_whatsapp",
+      "text_ar": "966500000000",
+      "text_en": "966500000000"
+    },
+    {
+      "id": 10,
+      "key_name": "contact_email",
+      "text_ar": "info@netpal.sa",
+      "text_en": "info@netpal.sa"
+    },
+    {
+      "id": 11,
+      "key_name": "btn_whatsapp",
+      "text_ar": "واتساب",
+      "text_en": "WhatsApp"
+    },
+    {
+      "id": 12,
+      "key_name": "btn_email",
+      "text_ar": "إيميل",
+      "text_en": "Email"
+    },
+    {
+      "id": 13,
+      "key_name": "footer_copy",
+      "text_ar": "جميع الحقوق محفوظة NetPal 2026",
+      "text_en": "All Rights Reserved NetPal 2026"
+    }
+  ],
+  "admins": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password_hash": "admin123",
+      "role": "super_admin",
+      "can_manage_projects": 1,
+      "can_manage_sections": 1,
+      "can_manage_content": 1,
+      "can_manage_team": 1,
+      "can_manage_logo": 1,
+      "can_manage_admins": 1
+    },
+    {
+      "id": 2,
+      "username": "daniel",
+      "password_hash": "admin123",
+      "role": "admin",
+      "can_manage_projects": 1,
+      "can_manage_sections": 1,
+      "can_manage_content": 1,
+      "can_manage_team": 1,
+      "can_manage_logo": 1,
+      "can_manage_admins": 0
+    },
+    {
+      "id": 3,
+      "username": "ahmad",
+      "password_hash": "admin123",
+      "role": "admin",
+      "can_manage_projects": 1,
+      "can_manage_sections": 1,
+      "can_manage_content": 0,
+      "can_manage_team": 1,
+      "can_manage_logo": 0,
+      "can_manage_admins": 0
+    },
+    {
+      "id": 4,
+      "username": "laith",
+      "password_hash": "admin123",
+      "role": "admin",
+      "can_manage_projects": 1,
+      "can_manage_sections": 0,
+      "can_manage_content": 1,
+      "can_manage_team": 0,
+      "can_manage_logo": 0,
+      "can_manage_admins": 0
+    },
+    {
+      "id": 5,
+      "username": "sarah_marketing",
+      "password_hash": "admin123",
+      "role": "admin",
+      "can_manage_projects": 1,
+      "can_manage_sections": 0,
+      "can_manage_content": 1,
+      "can_manage_team": 0,
+      "can_manage_logo": 0,
+      "can_manage_admins": 0
+    },
+    {
+      "id": 6,
+      "username": "editor_content",
+      "password_hash": "admin123",
+      "role": "admin",
+      "can_manage_projects": 0,
+      "can_manage_sections": 0,
+      "can_manage_content": 1,
+      "can_manage_team": 0,
+      "can_manage_logo": 0,
+      "can_manage_admins": 0
+    }
+  ]
+}

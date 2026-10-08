@@ -1,0 +1,41 @@
+{% extends "admin/base.html" %}
+{% block admin_content %}
+<div class="admin-header">
+    <h1>📁 الأقسام</h1>
+</div>
+
+<!-- Add Section -->
+<div class="card">
+    <h3>إضافة قسم جديد</h3>
+    <form method="POST" action="{{ url_for('admin_section_add') }}">
+        <div class="form-row">
+            <div class="form-group"><label>الاسم (عربي)</label><input type="text" name="name_ar" required></div>
+            <div class="form-group"><label>الاسم (إنجليزي)</label><input type="text" name="name_en" required></div>
+            <div class="form-group"><label>Slug</label><input type="text" name="slug" required></div>
+            <div class="form-group"><label>أيقونة</label><input type="text" name="icon" value="folder"></div>
+            <div class="form-group"><label>ترتيب</label><input type="number" name="order_idx" value="0"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">➕ إضافة</button>
+    </form>
+</div>
+
+<!-- Sections List -->
+{% for s in sections %}
+<div class="card">
+    <form method="POST" action="{{ url_for('admin_section_edit', sid=s.id) }}">
+        <div class="form-row">
+            <div class="form-group"><label>الاسم (عربي)</label><input type="text" name="name_ar" value="{{ s.name_ar }}" required></div>
+            <div class="form-group"><label>الاسم (إنجليزي)</label><input type="text" name="name_en" value="{{ s.name_en }}" required></div>
+            <div class="form-group"><label>Slug</label><input type="text" name="slug" value="{{ s.slug }}" required></div>
+            <div class="form-group"><label>أيقونة</label><input type="text" name="icon" value="{{ s.icon }}"></div>
+            <div class="form-group"><label>ترتيب</label><input type="number" name="order_idx" value="{{ s.order_idx }}"></div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <button type="submit" class="btn btn-primary btn-sm">💾 حفظ</button>
+            <a href="{{ url_for('admin_section_delete', sid=s.id) }}" class="btn btn-danger btn-sm" onclick="return confirm('حذف القسم وكل محتوياته؟')">🗑 حذف</a>
+            <a href="{{ url_for('admin_subsections', section_id=s.id) }}" class="btn btn-outline btn-sm">📂 الأقسام الفرعية ({{ s.subsections|length }})</a>
+        </div>
+    </form>
+</div>
+{% endfor %}
+{% endblock %}

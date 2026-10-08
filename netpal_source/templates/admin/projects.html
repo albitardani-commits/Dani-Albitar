@@ -1,0 +1,36 @@
+{% extends "admin/base.html" %}
+{% block admin_content %}
+<div class="admin-header">
+    <h1>🎨 المشاريع</h1>
+    <a href="{{ url_for('admin_project_add') }}" class="btn btn-primary">➕ مشروع جديد</a>
+</div>
+
+<!-- Filter tabs -->
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+    <a href="{{ url_for('admin_projects') }}" class="btn {% if not current_section %}btn-primary{% else %}btn-outline{% endif %} btn-sm">الكل</a>
+    {% for s in sections %}
+    <a href="{{ url_for('admin_projects', section_id=s.id) }}" class="btn {% if current_section == s.id %}btn-primary{% else %}btn-outline{% endif %} btn-sm">{{ s.name_ar }}</a>
+    {% endfor %}
+</div>
+
+<div class="card">
+<table>
+    <thead><tr><th>#</th><th>الصورة</th><th>العنوان (عربي)</th><th>القسم</th><th>إجراءات</th></tr></thead>
+    <tbody>
+    {% for p in projects %}
+    <tr>
+        <td>{{ p.id }}</td>
+        <td><img src="{% if p.cover_image.startswith('http') %}{{ p.cover_image }}{% else %}/static/uploads/{{ p.cover_image }}{% endif %}" style="width:60px;height:40px;object-fit:cover;border-radius:6px"></td>
+        <td>{{ p.title_ar }}</td>
+        <td>{{ p.section_rel.name_ar if p.section_rel else '-' }}</td>
+        <td style="display:flex;gap:6px">
+            <a href="{{ url_for('admin_project_edit', pid=p.id) }}" class="btn btn-outline btn-sm">✏️ تعديل</a>
+            <a href="{{ url_for('admin_project_delete', pid=p.id) }}" class="btn btn-danger btn-sm" onclick="return confirm('حذف المشروع؟')">🗑</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% if not projects %}<p style="text-align:center;padding:30px;color:var(--text2)">لا توجد مشاريع</p>{% endif %}
+</div>
+{% endblock %}

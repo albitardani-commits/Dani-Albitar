@@ -1,0 +1,99 @@
+{% extends "admin/base.html" %}
+{% block admin_content %}
+<div class="admin-header">
+    <h1>{% if project %}✏️ تعديل مشروع{% else %}➕ مشروع جديد{% endif %}</h1>
+    <a href="{{ url_for('admin_projects') }}" class="btn btn-outline btn-sm">← المشاريع</a>
+</div>
+
+<form method="POST" enctype="multipart/form-data" action="{% if project %}{{ url_for('admin_project_edit', pid=project.id) }}{% else %}{{ url_for('admin_project_add') }}{% endif %}">
+<div class="card">
+    <h3>معلومات المشروع</h3>
+    <div class="form-row">
+        <div class="form-group"><label>العنوان (عربي) *</label><input type="text" name="title_ar" value="{{ project.title_ar if project else '' }}" required></div>
+        <div class="form-group"><label>العنوان (إنجليزي) *</label><input type="text" name="title_en" value="{{ project.title_en if project else '' }}" required></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group"><label>الوصف (عربي)</label><textarea name="description_ar">{{ project.description_ar if project else '' }}</textarea></div>
+        <div class="form-group"><label>الوصف (إنجليزي)</label><textarea name="description_en">{{ project.description_en if project else '' }}</textarea></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label>القسم *</label>
+            <select name="section_id" id="section_select" required>
+                <option value="">اختر القسم</option>
+                {% for s in sections %}
+                <option value="{{ s.id }}" {% if project and project.section_id == s.id %}selected{% endif %}>{{ s.name_ar }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label>القسم الفرعي</label>
+            <select name="subsection_id" id="subsection_select">
+                <option value="">بدون</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group"><label>ترتيب</label><input type="number" name="order_idx" value="{{ project.order_idx if project else 0 }}"></div>
+        <div class="form-group"><label>التقنيات (فاصل بين كل واحدة)</label><input type="text" name="tech_tags" value="{{ project.tech_tags if project else '' }}"></div>
+    </div>
+</div>
+
+<div class="card">
+    <h3>الصور والروابط</h3>
+    <div class="form-row">
+        <div class="form-group">
+            <label>صورة الغلاف (رفع من الجهاز)</label>
+            <input type="file" name="cover_file" accept="image/*" style="padding:8px">
+            {% if project and project.cover_image %}
+            <p style="margin-top:6px;font-size:.8rem;color:var(--text2)">الحالية: {{ project.cover_image }}</p>
+            {% endif %}
+        </div>
+        <div class="form-group"><label>أو رابط صورة الغلاف</label><input type="url" name="cover_url" value="{% if project %}{{ project.cover_image if project.cover_image.startswith('http') else '' }}{% endif %}"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group"><label>رابط الفيديو</label><input type="text" name="video_url" value="{{ project.video_url if project else '' }}"></div>
+        <div class="form-group"><label>رابط المشروع</label><input type="url" name="link_url" value="{{ project.link_url if project else '' }}"></div>
+    </div>
+    <div class="form-group">
+        <label>صور إضافية (يمكنك رفع عدة صور)</label>
+        <input type="file" name="project_images" accept="image/*,video/*" multiple style="padding:8px">
+    </div>
+    {% if project and project.images %}
+    <div class="img-grid">
+        {% for img in project.images %}
+        <div class="img-item">
+            <img src="/static/uploads/{{ img.image_path }}" alt="">
+            <a href="{{ url_for('admin_project_image_delete', img_id=img.id) }}" class="delete-img" onclick="return confirm('حذف؟')">✕</a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+<button type="submit" class="btn btn-primary" style="margin-top:12px">💾 {% if project %}حفظ التعديلات{% else %}إضافة المشروع{% endif %}</button>
+</form>
+
+<script>
+const secSelect = document.getElementById('section_select');
+const subSelect = document.getElementById('subsection_select');
+const currentSub = {{ (project.subsection_id or 'null')|tojson }};
+
+secSelect.addEventListener('change', loadSubs);
+if(secSelect.value) loadSubs();
+
+function loadSubs(){
+    const sid = secSelect.value;
+    if(!sid){subSelect.innerHTML='<option value="">بدون</option>';return;}
+    fetch('/api/subsections/'+sid).then(r=>r.json()).then(data=>{
+        subSelect.innerHTML = '<option value="">بدون</option>';
+        data.forEach(s=>{
+            const opt = document.createElement('option');
+            opt.value = s.id; opt.textContent = s.name_ar;
+            if(currentSub && s.id === currentSub) opt.selected = true;
+            subSelect.appendChild(opt);
+        });
+    });
+}
+</script>
+{% endblock %}

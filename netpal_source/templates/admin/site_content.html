@@ -1,0 +1,34 @@
+{% extends "admin/base.html" %}
+{% block admin_content %}
+<div class="admin-header"><h1>📝 محتوى الموقع</h1></div>
+
+<!-- Add new content key -->
+<div class="card">
+    <h3>إضافة محتوى جديد</h3>
+    <form method="POST" action="{{ url_for('admin_content_add') }}">
+        <div class="form-row">
+            <div class="form-group"><label>المفتاح (key)</label><input type="text" name="key_name" required placeholder="مثال: hero_title"></div>
+            <div class="form-group"><label>النص (عربي)</label><input type="text" name="text_ar"></div>
+            <div class="form-group"><label>النص (إنجليزي)</label><input type="text" name="text_en"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">➕ إضافة</button>
+    </form>
+</div>
+
+<!-- Existing content -->
+<form method="POST" action="{{ url_for('admin_content_save') }}">
+<div class="card">
+    <h3>تعديل المحتوى</h3>
+    {% for c in content %}
+    <div style="border-bottom:1px solid var(--border);padding:16px 0">
+        <label style="font-weight:600;color:var(--primary);font-size:.85rem;display:block;margin-bottom:8px">{{ c.key_name }}</label>
+        <div class="form-row">
+            <div class="form-group"><label>عربي</label><textarea name="{{ c.key_name }}_ar" rows="2">{{ c.text_ar }}</textarea></div>
+            <div class="form-group"><label>إنجليزي</label><textarea name="{{ c.key_name }}_en" rows="2">{{ c.text_en }}</textarea></div>
+        </div>
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary" style="margin-top:16px">💾 حفظ الكل</button>
+</div>
+</form>
+{% endblock %}

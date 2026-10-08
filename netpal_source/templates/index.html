@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero" id="hero">
+    <div id="three-canvas-container"></div>
+    <div class="hero-logo-container"><img src="{{ url_for('static', filename='images/لوغو نيتبال جديد-0١.svg') }}" alt="NetPal" class="hero-main-logo"></div>
+    <div class="hero-content">
+        <h1 class="hero-title" data-i18n="hero_title">نحن فريق NetPal — نبتكر حضوراً بصرياً يخطف الأنظار ويترك أثراً لا يُنسى</h1>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">تصميم | فيديو وموشن | برمجة | تسويق</p>
+        <div class="hero-cta">
+            <a href="#portfolio" class="btn btn-primary" data-i18n="cta_portfolio">شوف أعمالنا</a>
+            <a href="#contact" class="btn btn-outline" data-i18n="cta_contact">تواصل معنا</a>
+        </div>
+    </div>
+    <div class="scroll-indicator"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+</section>
+
+<section id="about" class="container">
+    <div class="section-header"><h2 class="section-title" data-i18n="nav_about">من نحن</h2></div>
+    <div class="about-grid">
+        <div class="about-text">
+            <h3 data-i18n="about_title">فريق واحد. أربع مهارات. إبداع بلا حدود.</h3>
+            <p data-i18n="about_text">نحن في NetPal نؤمن بأن التصميم ليس مجرد شكل.</p>
+            <ul class="about-features">
+                <li data-i18n="feat_1">تصميم مبني على هدف</li>
+                <li data-i18n="feat_2">نظام شغل واضح</li>
+                <li data-i18n="feat_3">تسليم ملفات جاهز فوراً</li>
+            </ul>
+        </div>
+        <div class="team-grid" id="team-container"></div>
+    </div>
+</section>
+
+<section id="portfolio" class="container">
+    <div class="section-header"><h2 class="section-title" data-i18n="nav_portfolio">أعمالنا</h2></div>
+    <div class="portfolio-tabs" id="section-tabs"></div>
+    <div class="portfolio-subcategories" id="sub-tabs"></div>
+    <div class="projects-grid" id="projects-container"></div>
+</section>
+
+<section id="contact" class="container contact-section">
+    <div class="contact-bg"></div>
+    <div class="section-header"><h2 class="section-title" data-i18n="contact_title">جاهزين للمشروع الجاي</h2></div>
+    <div class="contact-actions">
+        <a href="https://wa.me/{{ content.get('contact_whatsapp',{}).get('ar','') }}" target="_blank" rel="noopener" class="contact-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            <span data-i18n="btn_whatsapp">واتساب</span>
+        </a>
+        <a href="mailto:{{ content.get('contact_email',{}).get('ar','') }}" class="contact-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            <span data-i18n="btn_email">إيميل</span>
+        </a>
+    </div>
+</section>
+
+<script>
+if(window.SITE_CONTENT){Object.assign(window.SITE_CONTENT, {
+    nav_about:{ar:'من نحن',en:'About Us'}, nav_portfolio:{ar:'أعمالنا',en:'Portfolio'},
+    nav_contact:{ar:'تواصل معنا',en:'Contact Us'}, cta_portfolio:{ar:'شوف أعمالنا',en:'See Our Work'},
+    cta_contact:{ar:'تواصل معنا',en:'Contact Us'},
+    feat_1:{ar:'تصميم مبني على هدف',en:'Purpose-Driven Design'},
+    feat_2:{ar:'نظام شغل واضح',en:'Clear Workflow'},
+    feat_3:{ar:'تسليم ملفات جاهز فوراً',en:'Instant File Delivery'},
+    contact_title:{ar:'جاهزين للمشروع الجاي',en:'Ready for the Next Project'},
+    btn_whatsapp:{ar:'واتساب',en:'WhatsApp'}, btn_email:{ar:'إيميل',en:'Email'},
+    footer_copy:{ar:'جميع الحقوق محفوظة NetPal 2026',en:'All Rights Reserved NetPal 2026'},
+});}
+</script>
+{% endblock %}

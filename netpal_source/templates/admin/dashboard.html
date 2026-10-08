@@ -1,0 +1,19 @@
+{% extends "admin/base.html" %}
+{% block admin_content %}
+<div class="admin-header"><h1>📊 لوحة التحكم</h1></div>
+<div class="stats-grid">
+    <div class="stat-card"><div class="num">{{ stats.projects }}</div><div class="label">مشروع</div></div>
+    <div class="stat-card"><div class="num">{{ stats.sections }}</div><div class="label">قسم</div></div>
+    <div class="stat-card"><div class="num">{{ stats.team }}</div><div class="label">عضو فريق</div></div>
+    <div class="stat-card"><div class="num">{{ stats.admins }}</div><div class="label">مشرف</div></div>
+</div>
+<div class="card">
+    <h3>روابط سريعة</h3>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="{{ url_for('admin_project_add') }}" class="btn btn-primary">➕ مشروع جديد</a>
+        <a href="{{ url_for('admin_sections') }}" class="btn btn-outline">📁 إدارة الأقسام</a>
+        <a href="{{ url_for('admin_team') }}" class="btn btn-outline">👥 إدارة الفريق</a>
+        <a href="{{ url_for('admin_content') }}" class="btn btn-outline">📝 تعديل المحتوى</a>
+    </div>
+</div>
+{% endblock %}
